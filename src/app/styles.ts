@@ -46,7 +46,9 @@ export const heroInner = css({
     },
 })
 
-export const heroCopy = css({})
+export const heroCopy = css({
+    paddingLeft: "2rem",
+})
 
 export const heroTitle = css({
     fontSize: "2xl",
