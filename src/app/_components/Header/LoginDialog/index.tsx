@@ -62,7 +62,7 @@ export const LoginDialog = ({ onClose }: LoginDialogProps) => {
                 </header>
 
                 <form onSubmit={handleSubmit(onSubmit)} className={form} noValidate>
-                    <FormInput<LoginFormValues>
+                    <FormInput
                         name="email"
                         label="E-mail"
                         type="email"
@@ -78,7 +78,7 @@ export const LoginDialog = ({ onClose }: LoginDialogProps) => {
                         }}
                     />
 
-                    <FormInput<{ password: string }>
+                    <FormInput
                         name="password"
                         label="Heslo"
                         type="password"

@@ -39,7 +39,7 @@ export const ContactForm = () => {
             <h2 className={formHeading}>Napište nám</h2>
 
             <form onSubmit={handleSubmit(onSubmit)} className={form}>
-                <FormInput<ContactFormValues>
+                <FormInput
                     name="name"
                     label="Jméno"
                     register={register}
@@ -54,7 +54,7 @@ export const ContactForm = () => {
                     }}
                 />
 
-                <FormInput<ContactFormValues>
+                <FormInput
                     name="email"
                     type="email"
                     label="E-mail"

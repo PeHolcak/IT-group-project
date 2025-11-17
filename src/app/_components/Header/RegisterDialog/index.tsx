@@ -46,7 +46,7 @@ export const RegisterDialog = ({ onClose }: RegisterDialogProps) => {
     return (
         <Dialog title="Registrace" onClose={onClose}>
             <form onSubmit={handleSubmit(onSubmit)} className={form} noValidate>
-                <FormInput<RegistrationValues>
+                <FormInput
                     name="name"
                     label="Jméno"
                     type="text"
@@ -62,7 +62,7 @@ export const RegisterDialog = ({ onClose }: RegisterDialogProps) => {
                     }}
                 />
 
-                <FormInput<RegistrationValues>
+                <FormInput
                     name="email"
                     label="E-mail"
                     type="email"
@@ -78,8 +78,7 @@ export const RegisterDialog = ({ onClose }: RegisterDialogProps) => {
                     }}
                 />
 
-                {/* Heslo */}
-                <FormInput<RegistrationValues>
+                <FormInput
                     name="password"
                     label="Heslo"
                     type="password"
@@ -95,7 +94,7 @@ export const RegisterDialog = ({ onClose }: RegisterDialogProps) => {
                     }}
                 />
 
-                <FormInput<{ passwordConfirm: string }>
+                <FormInput
                     name="passwordConfirm"
                     label="Potvrzení hesla"
                     type="password"

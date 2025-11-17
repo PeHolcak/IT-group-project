@@ -8,17 +8,17 @@ import {
 } from "react-hook-form";
 import { field, labelText, input, errorText } from "./styles";
 
-type FormInputProps<TFieldValues extends FieldValues> = {
-    name: Path<TFieldValues>;
+type FormInputProps = {
+    name: string;
     label: string;
     type?: string;
     autoComplete?: string;
-    rules?: RegisterOptions<TFieldValues, Path<TFieldValues>>;
-    register: UseFormRegister<TFieldValues>;
+    rules?: RegisterOptions;
+    register: UseFormRegister<any>;
     error?: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-export function FormInput<TFieldValues extends FieldValues>({
+export function FormInput({
     name,
     label,
     type = "text",
@@ -27,7 +27,7 @@ export function FormInput<TFieldValues extends FieldValues>({
     register,
     error,
     ...rest
-}: FormInputProps<TFieldValues>) {
+}: FormInputProps) {
     return (
         <div className={field}>
             <label>
