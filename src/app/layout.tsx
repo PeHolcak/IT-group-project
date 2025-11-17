@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { ReactNode } from "react"
 import { layoutBody, main as mainClass, shell as shellClass } from "./styles"
 import './globals.css'
-import "../styled-system/styles.css"
 
 import { Noto_Sans } from "next/font/google";
 import { Footer } from "./_components/Footer";
