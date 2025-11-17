@@ -51,3 +51,7 @@ export const btnGhost = css({
         color: "primary",
     },
 })
+
+export const btnFullWidth = css({
+    width: "100%",
+})

@@ -412,6 +412,10 @@
     background: rgba(15,17,21,0.85);
 }
 
+  .m_1rem_0_0_auto {
+    margin: 1rem 0 0 auto;
+}
+
   .flex_1_1_auto {
     flex: 1 1 auto;
 }
@@ -731,6 +735,26 @@
 
   .py_0\.85 {
     padding-block: 0.85px;
+}
+
+  .bdr_1rem {
+    border-radius: 1rem;
+}
+
+  .gap_8 {
+    gap: 8px;
+}
+
+  .px_8 {
+    padding-inline: 8px;
+}
+
+  .py_8 {
+    padding-block: 8px;
+}
+
+  .bdr_0\.2rem {
+    border-radius: 0.2rem;
 }
 
   .c_text {
@@ -1300,6 +1324,10 @@
     margin-top: 6px;
 }
 
+  .ml_auto {
+    margin-left: auto;
+}
+
   .before\:bg_currentColor::before,.after\:bg_currentColor::after {
     background: currentColor;
 }
@@ -1616,6 +1644,21 @@
 }
     .md\:py_4 {
       padding-block: 4px;
+}
+    .md\:px_10 {
+      padding-inline: 10px;
+}
+    .md\:py_8 {
+      padding-block: 8px;
+}
+    .md\:px_12 {
+      padding-inline: 12px;
+}
+    .md\:py_10 {
+      padding-block: 10px;
+}
+    .md\:px_16 {
+      padding-inline: 16px;
 }
     .md\:grid-tc_repeat\(2\,_minmax\(0\,_1fr\)\) {
       grid-template-columns: repeat(2, minmax(0, 1fr));

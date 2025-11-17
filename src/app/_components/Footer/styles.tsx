@@ -15,10 +15,7 @@ export const footerInner = css({
         lg: "repeat(3, minmax(0, 1fr))",
     },
 
-    px: {
-        base: "1rem",
-        lg: "0",
-    },
+    px: "1.5rem",
 })
 
 export const footerBottom = css({

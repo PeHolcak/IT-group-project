@@ -30,7 +30,8 @@ import {
     srOnly,
 } from "./styles";
 import { Button } from "@/components/Button";
-import { LoginDialog } from "@/components/Dialog";
+import { LoginDialog } from "./LoginDialog";
+import { RegisterDialog } from "./RegisterDialog";
 
 const navItems = [
     { id: "home", label: "Domů", href: "/" },
@@ -58,7 +59,7 @@ export const Header = () => {
     const openLogin = () => setModalType("login");
     const openRegister = () => setModalType("register");
     const closeDialog = () => setModalType(null);
-
+    console.log("modalType", modalType);
     return (
         <header className={siteHeader} data-component="site-header">
             <div className={`${shell} ${siteHeaderInner}`}>
@@ -162,6 +163,7 @@ export const Header = () => {
             </div>
 
             {modalType === "login" ? <LoginDialog onClose={closeDialog} /> : null}
+            {modalType === "register" ? <RegisterDialog onClose={closeDialog} /> : null}
         </header>
     );
 };

@@ -14,7 +14,7 @@ const HOURS = [
 
 export const HoursSection = () => {
     return (
-        <section className={hoursWrapper}>
+        <div className={hoursWrapper}>
             <h3 className={hoursTitle}>Otevírací doba</h3>
             <ul className={hoursList}>
                 {HOURS.map(({ label, value }) => (
@@ -24,6 +24,6 @@ export const HoursSection = () => {
                     </li>
                 ))}
             </ul>
-        </section>
+        </div>
     )
 }

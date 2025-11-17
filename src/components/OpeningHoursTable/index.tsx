@@ -1,4 +1,4 @@
-import { hoursTableWrapper, hoursTable } from "../../../styles"
+import { hoursTableWrapper, hoursTable } from "../../app/styles"
 
 export default function OpeningHoursTable() {
     return (

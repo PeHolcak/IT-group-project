@@ -4,6 +4,7 @@ import { css } from "@/styled-system/css"
 export const brandWrapper = css({
     display: "flex",
     flexDirection: "column",
+    alignItems: { base: "center", lg: "flex-start" },
     gap: "0.35rem",
 })
 

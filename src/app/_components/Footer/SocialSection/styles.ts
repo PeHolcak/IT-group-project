@@ -3,6 +3,7 @@ import { css } from "@/styled-system/css"
 export const socialWrapper = css({
     display: "flex",
     flexDirection: "column",
+    alignItems: { base: "center", lg: "flex-end" },
     gap: "0.75rem",
 })
 
