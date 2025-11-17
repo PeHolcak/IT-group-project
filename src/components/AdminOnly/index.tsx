@@ -1,12 +1,16 @@
-import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { PropsWithChildren } from "react";
 
-export const AdminOnly = ({ children }: PropsWithChildren) => {
-    const { data } = useSession();
+export const dynamic = "force-dynamic";
 
-    if (data?.user?.role !== "admin") {
-        return <p>Nemáš oprávnění.</p>;
+export const AdminOnly = async ({ children }: PropsWithChildren) => {
+    const session = await getServerSession(authOptions);
+
+    if (!session || session.user?.role !== "admin") {
+        redirect("/");
     }
 
-    return <div>{children}</div>;
+    return children;
 };
