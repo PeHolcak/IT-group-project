@@ -12,9 +12,7 @@ const ContactSection = () => {
             <div className={contactInner}>
                 <ContactInfo />
                 <ContactForm />
-
             </div>
-
             <ContactMap />
         </map>
     )

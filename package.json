@@ -17,15 +17,17 @@
     "@lineiconshq/react-lineicons": "^1.0.5",
     "@pandacss/preset-base": "^1.5.1",
     "@pandacss/preset-panda": "^1.5.1",
-    "@prisma/client": "^6.19.0",
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.44.7",
     "next": "16.0.3",
+    "next-auth": "^4.24.13",
     "pg": "^8.16.3",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-hook-form": "^7.66.0",
-    "react-lineicons": "^3.0.0"
+    "react-lineicons": "^3.0.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
@@ -35,7 +37,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "drizzle-kit": "^0.31.7",
-    "prisma": "^6.19.0",
     "typescript": "^5"
   },
   "packageManager": "pnpm@10.20.0+sha512.cf9998222162dd85864d0a8102e7892e7ba4ceadebbf5a31f9c2fce48dfce317a9c53b9f6464d1ef9042cba2e02ae02a9f7c143a2b438cd93c91840f0192b9dd"

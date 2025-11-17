@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSession, signOut } from "next-auth/react";
 import { shell } from "../../styles";
 import {
     siteHeader,
@@ -47,6 +48,9 @@ export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalType, setModalType] = useState<ModalType>(null);
 
+    const { data: session, status } = useSession();          // 👈 přidáno
+    const isAuthenticated = status === "authenticated";      // 👈 helper
+
     const isActive = (href: string) => {
         if (href === "/") {
             return pathname === "/";
@@ -59,7 +63,13 @@ export const Header = () => {
     const openLogin = () => setModalType("login");
     const openRegister = () => setModalType("register");
     const closeDialog = () => setModalType(null);
-    console.log("modalType", modalType);
+
+    const handleLogout = async () => {                      // 👈 logout helper
+        await signOut({ callbackUrl: "/" });
+        setIsOpen(false);
+        setModalType(null);
+    };
+
     return (
         <header className={siteHeader} data-component="site-header">
             <div className={`${shell} ${siteHeaderInner}`}>
@@ -75,7 +85,6 @@ export const Header = () => {
                     <span className={siteHeaderWordmark}>BoardZone</span>
                 </Link>
 
-                {/* burger */}
                 <button
                     type="button"
                     className={siteHeaderToggle}
@@ -90,7 +99,6 @@ export const Header = () => {
                     />
                 </button>
 
-                {/* desktop nav */}
                 <nav className={siteHeaderNav} aria-label="Hlavní navigace">
                     <ul className={siteHeaderNavList}>
                         {navItems.map((item) => (
@@ -108,18 +116,33 @@ export const Header = () => {
                     </ul>
                 </nav>
 
-                {/* desktop CTA */}
+                {/* DESKTOP CTA */}
                 <div className={siteHeaderCta}>
-                    <Button variant="primary" onClick={openLogin}>
-                        Přihlásit
-                    </Button>
-                    <Button variant="ghost" onClick={openRegister}>
-                        Registrovat
-                    </Button>
+                    {!isAuthenticated ? (
+                        <>
+                            <Button variant="primary" onClick={openLogin}>
+                                Přihlásit
+                            </Button>
+                            <Button variant="ghost" onClick={openRegister}>
+                                Registrovat
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/profile">
+                                <Button variant="ghost">
+                                    Profil
+                                </Button>
+                            </Link>
+                            <Button variant="primary" onClick={handleLogout}>
+                                Odhlásit
+                            </Button>
+                        </>
+                    )}
                 </div>
             </div>
 
-            {/* Mobile drawer */}
+            {/* MOBILE DRAWER */}
             <div
                 id="mobile-nav"
                 aria-hidden={!isOpen}
@@ -140,7 +163,9 @@ export const Header = () => {
                             <li key={item.id}>
                                 <Link
                                     href={item.href}
-                                    className={`${mobileDrawerNavLink} ${isActive(item.href) ? mobileDrawerNavLinkActive : ""
+                                    className={`${mobileDrawerNavLink} ${isActive(item.href)
+                                        ? mobileDrawerNavLinkActive
+                                        : ""
                                         }`}
                                     aria-current={isActive(item.href) ? "page" : undefined}
                                     onClick={handleCloseMenu}
@@ -152,13 +177,44 @@ export const Header = () => {
                     </ul>
                 </nav>
 
+                {/* MOBILE CTA */}
                 <div className={mobileDrawerCta}>
-                    <Button variant="primary" onClick={openLogin}>
-                        Přihlásit
-                    </Button>
-                    <Button variant="ghost" onClick={openRegister}>
-                        Registrovat
-                    </Button>
+                    {!isAuthenticated ? (
+                        <>
+                            <Button
+                                variant="primary"
+                                onClick={() => {
+                                    openLogin();
+                                    handleCloseMenu();
+                                }}
+                            >
+                                Přihlásit
+                            </Button>
+                            <Button
+                                variant="ghost"
+                                onClick={() => {
+                                    openRegister();
+                                    handleCloseMenu();
+                                }}
+                            >
+                                Registrovat
+                            </Button>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/profile" onClick={handleCloseMenu}>
+                                <Button variant="ghost">
+                                    Profil
+                                </Button>
+                            </Link>
+                            <Button
+                                variant="primary"
+                                onClick={handleLogout}
+                            >
+                                Odhlásit
+                            </Button>
+                        </>
+                    )}
                 </div>
             </div>
 

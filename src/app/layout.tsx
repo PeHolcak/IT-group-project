@@ -7,6 +7,7 @@ import "../styled-system/styles.css"
 import { Noto_Sans } from "next/font/google";
 import { Footer } from "./_components/Footer";
 import { Header } from "./_components/Header";
+import { Providers } from "./_components/Providers";
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -21,13 +22,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="cs" suppressHydrationWarning className={notoSans.className}>
-
-
       <body className={layoutBody}>
-        <Header />
-        <main className={mainClass}>
-          <div className={shellClass}>{children}</div>
-        </main>
+        <Providers>
+          <Header />
+          <main className={mainClass}>
+            <div className={shellClass}>{children}</div>
+          </main>
+        </Providers>
         <Footer />
       </body>
     </html>
