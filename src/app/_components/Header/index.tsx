@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { shell } from "../../styles"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { shell } from "../../styles";
 import {
     siteHeader,
     siteHeaderInner,
@@ -28,30 +28,36 @@ import {
     mobileDrawerNavLinkActive,
     mobileDrawerCta,
     srOnly,
-} from "./styles"
-import { Button } from "@/components/Button"
-
-
+} from "./styles";
+import { Button } from "@/components/Button";
+import { LoginDialog } from "@/components/Dialog";
 
 const navItems = [
     { id: "home", label: "Domů", href: "/" },
     { id: "reservation", label: "Rezervace", href: "/reservation" },
     { id: "menu", label: "Menu", href: "/menu" },
     { id: "contact", label: "Kontakt", href: "/contact" },
-]
+];
+
+type ModalType = "login" | "register" | null;
 
 export const Header = () => {
-    const pathname = usePathname()
-    const [isOpen, setIsOpen] = useState(false)
+    const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
+    const [modalType, setModalType] = useState<ModalType>(null);
 
     const isActive = (href: string) => {
         if (href === "/") {
-            return pathname === "/"
+            return pathname === "/";
         }
-        return pathname.startsWith(href)
-    }
+        return pathname.startsWith(href);
+    };
 
-    const handleClose = () => setIsOpen(false)
+    const handleCloseMenu = () => setIsOpen(false);
+
+    const openLogin = () => setModalType("login");
+    const openRegister = () => setModalType("register");
+    const closeDialog = () => setModalType(null);
 
     return (
         <header className={siteHeader} data-component="site-header">
@@ -60,7 +66,7 @@ export const Header = () => {
                     href="/"
                     className={siteHeaderBrand}
                     aria-label={`BoardZone domů`}
-                    onClick={handleClose}
+                    onClick={handleCloseMenu}
                 >
                     <span className={siteHeaderLogo} aria-hidden="true">
                         🎲
@@ -68,6 +74,7 @@ export const Header = () => {
                     <span className={siteHeaderWordmark}>BoardZone</span>
                 </Link>
 
+                {/* burger */}
                 <button
                     type="button"
                     className={siteHeaderToggle}
@@ -82,6 +89,7 @@ export const Header = () => {
                     />
                 </button>
 
+                {/* desktop nav */}
                 <nav className={siteHeaderNav} aria-label="Hlavní navigace">
                     <ul className={siteHeaderNavList}>
                         {navItems.map((item) => (
@@ -99,9 +107,14 @@ export const Header = () => {
                     </ul>
                 </nav>
 
+                {/* desktop CTA */}
                 <div className={siteHeaderCta}>
-                    <Button variant="primary">Přihlásit</Button>
-                    <Button variant="ghost">Registrovat</Button>
+                    <Button variant="primary" onClick={openLogin}>
+                        Přihlásit
+                    </Button>
+                    <Button variant="ghost" onClick={openRegister}>
+                        Registrovat
+                    </Button>
                 </div>
             </div>
 
@@ -114,7 +127,7 @@ export const Header = () => {
                 <button
                     type="button"
                     className={mobileDrawerClose}
-                    onClick={handleClose}
+                    onClick={handleCloseMenu}
                 >
                     <span className={srOnly}>Zavřít menu</span>
                     <span aria-hidden="true" className={mobileDrawerCloseIcon} />
@@ -129,7 +142,7 @@ export const Header = () => {
                                     className={`${mobileDrawerNavLink} ${isActive(item.href) ? mobileDrawerNavLinkActive : ""
                                         }`}
                                     aria-current={isActive(item.href) ? "page" : undefined}
-                                    onClick={handleClose}
+                                    onClick={handleCloseMenu}
                                 >
                                     {item.label}
                                 </Link>
@@ -139,10 +152,16 @@ export const Header = () => {
                 </nav>
 
                 <div className={mobileDrawerCta}>
-                    <Button variant="primary">Přihlásit</Button>
-                    <Button variant="ghost">Registrovat</Button>
+                    <Button variant="primary" onClick={openLogin}>
+                        Přihlásit
+                    </Button>
+                    <Button variant="ghost" onClick={openRegister}>
+                        Registrovat
+                    </Button>
                 </div>
             </div>
+
+            {modalType === "login" ? <LoginDialog onClose={closeDialog} /> : null}
         </header>
-    )
-}
+    );
+};
