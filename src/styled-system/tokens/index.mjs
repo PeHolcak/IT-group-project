@@ -11,6 +11,10 @@ const tokens = {
     "value": "#3fb950",
     "variable": "var(--colors-primary)"
   },
+  "colors.secondary": {
+    "value": "rgba(23, 26, 33, 0.7)",
+    "variable": "var(--colors-secondary)"
+  },
   "colors.accent": {
     "value": "#f59e0b",
     "variable": "var(--colors-accent)"
@@ -26,6 +30,22 @@ const tokens = {
   "colors.borderSubtle": {
     "value": "rgba(229, 231, 235, 0.08)",
     "variable": "var(--colors-border-subtle)"
+  },
+  "colors.darkText": {
+    "value": "#0b0d10",
+    "variable": "var(--colors-dark-text)"
+  },
+  "colors.ghostButton": {
+    "value": "rgba(229, 231, 235, 0.18)",
+    "variable": "var(--colors-ghost-button)"
+  },
+  "colors.white": {
+    "value": "#fff",
+    "variable": "var(--colors-white)"
+  },
+  "gradients.satisfies": {
+    "value": "radial-gradient(circle at 15% 20%, rgba(63, 185, 80, 0.25), transparent 55%)",
+    "variable": "var(--gradients-satisfies)"
   },
   "radii.sm": {
     "value": "0.5rem",

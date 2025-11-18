@@ -5,6 +5,13 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react"
 import { toast } from "sonner"
 
+import { Dialog } from "@/components/Dialog"
+import { FormInput } from "@/components/FormInput"
+
+import { type RegistrationValues, registrationSchema } from "@/schemas/userFormSchema"
+import { getErrorMessage } from "@/utils/errorUtils"
+
+import { submitRegistration } from "./actions"
 import {
   form,
   errorText,
@@ -14,13 +21,6 @@ import {
   actionsRow,
   submitButton,
 } from "./styles"
-
-import { Dialog } from "@/components/Dialog"
-import { FormInput } from "@/components/FormInput"
-import { submitRegistration } from "./actions"
-
-import { type RegistrationValues, registrationSchema } from "@/schemas/userFormSchema"
-import { getErrorMessage } from "@/utils/errorUtils"
 
 type RegisterDialogProps = { onClose: () => void }
 

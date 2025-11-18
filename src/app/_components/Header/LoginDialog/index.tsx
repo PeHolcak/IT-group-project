@@ -7,6 +7,9 @@ import Link from "next/link"
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 
+import { FormInput } from "@/components/FormInput"
+import { type LoginValues, loginSchema } from "@/schemas/userFormSchema"
+
 import {
   overlay,
   dialog,
@@ -18,12 +21,10 @@ import {
   checkbox,
   checkboxLabel,
   actionsRow,
-  submitButton,
   forgotLink,
 } from "./styles"
-
-import { FormInput } from "@/components/FormInput"
-import { type LoginValues, loginSchema } from "@/schemas/userFormSchema"
+import { Button } from "@/components/Button"
+import { Dialog } from "@/components/Dialog"
 
 type LoginDialogProps = {
   onClose?: () => void
@@ -67,52 +68,43 @@ export const LoginDialog = ({ onClose }: LoginDialogProps) => {
   }
 
   return (
-    <div className={overlay}>
-      <div className={dialog}>
-        <header className={dialogHeader}>
-          <h2 className={title}>Přihlášení</h2>
-          <button type="button" onClick={onClose} className={closeButton} aria-label="Zavřít">
-            ×
-          </button>
-        </header>
+    <Dialog title="Přihlášení" onClose={onClose}>
+      <form onSubmit={handleSubmit(onSubmit)} className={form} noValidate>
+        <FormInput
+          name="email"
+          label="E-mail"
+          type="email"
+          autoComplete="email"
+          register={register}
+          error={errors.email?.message}
+        />
 
-        <form onSubmit={handleSubmit(onSubmit)} className={form} noValidate>
-          <FormInput
-            name="email"
-            label="E-mail"
-            type="email"
-            autoComplete="email"
-            register={register}
-            error={errors.email?.message}
-          />
+        <FormInput
+          name="password"
+          label="Heslo"
+          type="password"
+          autoComplete="current-password"
+          register={register}
+          error={errors.password?.message}
+        />
 
-          <FormInput
-            name="password"
-            label="Heslo"
-            type="password"
-            autoComplete="current-password"
-            register={register}
-            error={errors.password?.message}
-          />
+        <div className={rememberRow}>
+          <label className={checkboxLabel}>
+            <input type="checkbox" className={checkbox} {...register("remember")} />
+            Zapamatovat
+          </label>
+        </div>
 
-          <div className={rememberRow}>
-            <label className={checkboxLabel}>
-              <input type="checkbox" className={checkbox} {...register("remember")} />
-              Zapamatovat
-            </label>
-          </div>
+        <div className={actionsRow}>
+          <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Přihlašuji..." : "Přihlásit se"}
+          </Button>
 
-          <div className={actionsRow}>
-            <button type="submit" className={submitButton} disabled={isSubmitting}>
-              {isSubmitting ? "Přihlašuji..." : "Přihlásit se"}
-            </button>
-
-            <Link href="/zapomenute-heslo" className={forgotLink}>
-              Zapomenuté heslo
-            </Link>
-          </div>
-        </form>
-      </div>
-    </div>
+          <Link href="/zapomenute-heslo" className={forgotLink}>
+            Zapomenuté heslo
+          </Link>
+        </div>
+      </form>
+    </Dialog>
   )
 }

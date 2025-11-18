@@ -21,10 +21,14 @@ export default defineConfig({
         bg: { value: "#0f1115" },
         surface: { value: "#171a21" },
         primary: { value: "#3fb950" },
+        secondary: { value: "rgba(23, 26, 33, 0.7)" },
         accent: { value: "#f59e0b" },
         text: { value: "#e5e7eb" },
         muted: { value: "#9ca3af" },
         borderSubtle: { value: "rgba(229, 231, 235, 0.08)" },
+        darkText: { value: "#0b0d10" },
+        ghostButton: { value: "rgba(229, 231, 235, 0.18)" },
+        white: { value: "#fff" },
       },
       gradients: {
         satisfies: {

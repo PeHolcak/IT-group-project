@@ -1,58 +1,28 @@
-"use client";
+"use client"
 
-import { useForm } from "react-hook-form";
-import Link from "next/link";
-import {
-    overlay,
-    dialog,
-    dialogHeader,
-    closeButton,
-    title,
-    form,
-    field,
-    labelText,
-    input,
-    errorText,
-    rememberRow,
-    checkbox,
-    checkboxLabel,
-    actionsRow,
-    submitButton,
-    forgotLink,
-} from "./styles";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react"
 
-type LoginFormValues = {
-    email: string;
-    password: string;
-    remember: boolean;
-};
+import { overlay, dialog, dialogHeader, closeButton, titleClass } from "./styles"
 
 type DialogProps = PropsWithChildren<{
-    onClose?: () => void;
-    title: string
-    children: React.ReactNode;
-}>;
+  onClose?: () => void
+  title: string
+  children: ReactNode
+}>
 
 export const Dialog = ({ onClose, title, children }: DialogProps) => {
+  return (
+    <div className={overlay}>
+      <div className={dialog}>
+        <header className={dialogHeader}>
+          <h2 className={titleClass}>{title}</h2>
+          <button type="button" onClick={onClose} className={closeButton} aria-label="Zavřít">
+            ×
+          </button>
+        </header>
 
-    return (
-        <div className={overlay}>
-            <div className={dialog}>
-                <header className={dialogHeader}>
-                    <h2 className={title}>{title}</h2>
-                    <button
-                        type="button"
-                        onClick={onClose}
-                        className={closeButton}
-                        aria-label="Zavřít"
-                    >
-                        ×
-                    </button>
-                </header>
-
-                {children}
-            </div>
-        </div>
-    );
-};
+        {children}
+      </div>
+    </div>
+  )
+}

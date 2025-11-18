@@ -1,14 +1,5 @@
 import { css } from "@/styled-system/css";
 
-export const overlay = css({
-    position: "fixed",
-    inset: 0,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    bg: "rgba(0,0,0,0.65)",
-    zIndex: 40,
-});
 
 export const dialog = css({
     width: "100%",
@@ -21,67 +12,10 @@ export const dialog = css({
     position: "relative",
 });
 
-export const dialogHeader = css({
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    mb: "1.5rem",
-});
-
-export const closeButton = css({
-    border: "none",
-    bg: "transparent",
-    color: "#9ca3af",
-    fontSize: "1.4rem",
-    cursor: "pointer",
-    lineHeight: 1,
-    _hover: {
-        color: "#f9fafb",
-    },
-});
-
-export const title = css({
-    fontSize: "1.5rem",
-    fontWeight: 700,
-});
-
 export const form = css({
     display: "flex",
     flexDirection: "column",
     gap: "1rem",
-});
-
-export const field = css({
-    display: "flex",
-    flexDirection: "column",
-    gap: "0.35rem",
-});
-
-export const labelText = css({
-    fontSize: "0.85rem",
-    color: "#d1d5db",
-});
-
-export const input = css({
-    width: "100%",
-    borderRadius: "0.75rem",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "#374151",
-    bg: "#020617",
-    color: "#f9fafb",
-    px: "0.9rem",
-    py: "0.7rem",
-    fontSize: "0.9rem",
-    outline: "none",
-    transition: "border-color 0.15s ease, box-shadow 0.15s ease",
-    _focusVisible: {
-        borderColor: "#3fb950",
-        boxShadow: "0 0 0 1px #3fb950",
-    },
-    _placeholder: {
-        color: "#6b7280",
-    },
 });
 
 export const errorText = css({
@@ -140,14 +74,5 @@ export const submitButton = css({
         cursor: "not-allowed",
         boxShadow: "none",
         transform: "none",
-    },
-});
-
-export const forgotLink = css({
-    fontSize: "0.9rem",
-    color: "#fbbf24",
-    textDecoration: "underline",
-    _hover: {
-        color: "#facc15",
     },
 });

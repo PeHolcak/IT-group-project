@@ -9,7 +9,6 @@ import { RegistrationValues, registrationSchema } from "@/schemas/userFormSchema
 
 export async function submitRegistration(values: RegistrationValues) {
   const parsed = registrationSchema.safeParse(values)
-  console.log("values952", values, parsed)
 
   if (!parsed.success) {
     throw new Error("Neplatná data formuláře")

@@ -1,53 +1,37 @@
-import Image from "next/image";
-import Link from "next/link";
-import {
-    hero,
-    heroInner,
-    heroCopy,
-    heroTitle,
-    heroText,
-    heroActions,
-    heroMedia,
-    eyebrow,
-} from "../../styles";
-import { Button } from "@/components/Button";
-import { ButtonLink } from "@/components/ButtonLink";
+import Image from "next/image"
+import { heroInner, heroCopy, heroTitle, heroText, heroActions, heroMedia, eyebrow } from "./styles"
+import { ButtonLink } from "@/components/ButtonLink"
 
-export default function HeroSection() {
-    return (
-        <section className={hero}>
-            <div className={heroInner}>
-                <div className={heroCopy}>
-                    <p className={eyebrow}>Deskové hry &amp; řemeslné pivo</p>
-                    <h1 className={heroTitle}>
-                        Deskové hry &amp; pivo. Rezervuj stůl online.
-                    </h1>
-                    <p className={heroText}>
-                        Vyrazte s partou na večer plný strategií, příběhů a speciálních piv.
-                        Rezervace zvládnete během pár kliknutí.
-                    </p>
+export const HeroSection = () => {
+  return (
+    <section className={heroInner}>
+      <div className={heroCopy}>
+        <p className={eyebrow}>Deskové hry &amp; řemeslné pivo</p>
+        <h1 className={heroTitle}>Deskové hry &amp; pivo. Rezervuj stůl online.</h1>
+        <p className={heroText}>
+          Vyrazte s partou na večer plný strategií, příběhů a speciálních piv. Rezervace zvládnete
+          během pár kliknutí.
+        </p>
 
-                    <div className={heroActions}>
-                        <ButtonLink href="/reservation" variant="primary" fullWidth>
-                            Rezervovat stůl
-                        </ButtonLink>
-                        <ButtonLink href="/menu" variant="ghost" fullWidth>
-                            Zobrazit menu
-                        </ButtonLink>
-                    </div>
+        <div className={heroActions}>
+          <ButtonLink href="/reservation" variant="primary" fullWidth>
+            Rezervovat stůl
+          </ButtonLink>
+          <ButtonLink href="/menu" variant="ghost" fullWidth>
+            Zobrazit menu
+          </ButtonLink>
+        </div>
+      </div>
 
-                </div>
-
-                <div className={heroMedia}>
-                    <Image
-                        src="/images/hero-board.svg"
-                        alt="Deskové hry a pivo"
-                        width={600}
-                        height={400}
-                        loading="lazy"
-                    />
-                </div>
-            </div >
-        </section >
-    );
+      <div className={heroMedia}>
+        <Image
+          src="/images/hero-board.svg"
+          alt="Deskové hry a pivo"
+          width={600}
+          height={400}
+          loading="lazy"
+        />
+      </div>
+    </section>
+  )
 }
