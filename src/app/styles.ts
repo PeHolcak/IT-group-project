@@ -144,3 +144,37 @@ export const mapPlaceholder = css({
     textAlign: "center",
 })
 
+
+
+
+export const loadingWrapper = css({
+    minH: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    bg: { base: "gray.950", _light: "gray.50" },
+    px: "4",
+})
+
+export const loadingCard = css({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "0.75rem",
+    borderRadius: "xl",
+    bg: { base: "rgba(17, 24, 39, 0.92)", _light: "white" },
+    boxShadow: "0 18px 45px rgba(15, 23, 42, 0.45)",
+    px: "1.75rem",
+    py: "1.4rem",
+    borderWidth: "1px",
+    borderColor: { base: "whiteAlpha.200", _light: "gray.200" },
+})
+
+
+export const Text = css({
+    fontSize: "sm",
+    letterSpacing: "0.04em",
+    textTransform: "uppercase",
+    fontWeight: 500,
+    color: { base: "gray.100", _light: "gray.700" },
+})

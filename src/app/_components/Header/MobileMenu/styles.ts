@@ -147,45 +147,16 @@ export const mobileDrawer = css({
     },
     flexDirection: "column",
     gap: "0.6rem",
-    transform: "translateY(-10%)",
-    opacity: 0,
-    visibility: "hidden",
     transition: "opacity 0.2s ease, transform 0.2s ease",
     zIndex: 40,
 })
 
-export const mobileDrawerOpen = css({
-    opacity: "1 !important",
-    transform: "translateY(0)",
-    visibility: "visible",
-})
 
 export const mobileDrawerClose = css({
     position: "absolute",
     top: "md",
     right: "md",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: "2.5rem",
-    height: "2.5rem",
-    borderRadius: "sm",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "rgba(229, 231, 235, 0.18)",
-    bg: "rgba(255, 255, 255, 0.04)",
-    color: "text",
-    cursor: "pointer",
-    transition: "background 0.2s ease, border-color 0.2s ease",
-    _hover: {
-        bg: "rgba(255, 255, 255, 0.08)",
-        borderColor: "rgba(229, 231, 235, 0.28)",
-    },
-    _focusVisible: {
-        outline: "2px solid",
-        outlineColor: "accent",
-        outlineOffset: "2px",
-    },
+
 })
 
 export const mobileDrawerCloseIcon = css({

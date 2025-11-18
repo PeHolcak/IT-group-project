@@ -94,10 +94,18 @@ export const burgerOpen = css({
     },
 })
 
+export const mobileMenuButton = css({
+    paddingLeft: "5px !important",
+    display: {
+        base: "block",
+        lg: "none",
+    },
+})
+
 export const siteHeaderNav = css({
     display: {
         base: "none",
-        sm: "block",
+        lg: "block",
     },
 })
 
@@ -124,13 +132,13 @@ export const navLink = css({
 })
 
 export const navLinkActive = css({
-    color: "text",
+    color: "primary !important",
 })
 
 export const siteHeaderCta = css({
     display: {
         base: "none",
-        sm: "inline-flex",
+        lg: "inline-flex",
     },
     alignItems: "center",
     gap: "sm",

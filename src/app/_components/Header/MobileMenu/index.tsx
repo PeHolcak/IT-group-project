@@ -1,19 +1,19 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
 
+import { XmarkSolid } from "@lineiconshq/free-icons";
+import { Lineicons } from "@lineiconshq/react-lineicons";
 import {
     mobileDrawer,
-    mobileDrawerOpen,
-    mobileDrawerClose,
-    mobileDrawerCloseIcon,
     mobileDrawerNav,
     mobileDrawerNavList,
     mobileDrawerNavLink,
     mobileDrawerNavLinkActive,
     mobileDrawerCta,
-    srOnly,
+    mobileDrawerClose,
 } from "./styles";
 import { ButtonLink } from "@/components/ButtonLink";
+import { IconButton } from "@/components/IconButton";
 
 type NavItem = {
     id: string;
@@ -43,21 +43,30 @@ export const MobileMenu = ({
     isActive,
 }: MobileMenuProps) => {
 
-    console.log("MobileMenu render, isOpen:", isOpen, `${isOpen ? mobileDrawerOpen : ""}`);
+    if (!isOpen) {
+        return null;
+    }
+
     return (
         <div
             id="mobile-nav"
             aria-hidden={!isOpen}
-            className={`${mobileDrawer} ${isOpen ? mobileDrawerOpen : ""}`}
+            className={mobileDrawer}
         >
-            <button
-                type="button"
-                className={mobileDrawerClose}
+            <IconButton
                 onClick={onClose}
-            >
-                <span className={srOnly}>Zavřít menu</span>
-                <span aria-hidden="true" className={mobileDrawerCloseIcon} />
-            </button>
+                ariaLabel="Zavřít menu"
+                className={mobileDrawerClose}
+                icon={
+                    <Lineicons
+                        icon={XmarkSolid}
+                        size={18}
+                        strokeWidth={1.7}
+                        aria-hidden="true"
+                        style={{ marginRight: 8 }}
+                    />
+                }
+            />
 
             <nav className={mobileDrawerNav} aria-label="Mobilní navigace">
                 <ul className={mobileDrawerNavList}>
@@ -65,9 +74,7 @@ export const MobileMenu = ({
                         <li key={item.id}>
                             <Link
                                 href={item.href}
-                                className={`${mobileDrawerNavLink} ${isActive(item.href)
-                                    ? mobileDrawerNavLinkActive
-                                    : ""
+                                className={`${mobileDrawerNavLink} ${isActive(item.href) ? mobileDrawerNavLinkActive : ""
                                     }`}
                                 aria-current={isActive(item.href) ? "page" : undefined}
                                 onClick={onClose}
@@ -103,19 +110,20 @@ export const MobileMenu = ({
                     </>
                 ) : (
                     <>
-                        <ButtonLink href="/profile" onClick={onClose} variant="ghost" fullWidth>
-                            Profil
-                        </ButtonLink>
-                        <Button
-                            variant="primary"
-                            onClick={onLogout}
+                        <ButtonLink
+                            href="/profile"
+                            onClick={onClose}
+                            variant="ghost"
                             fullWidth
                         >
+                            Profil
+                        </ButtonLink>
+                        <Button variant="primary" onClick={onLogout} fullWidth>
                             Odhlásit
                         </Button>
                     </>
                 )}
             </div>
-        </div>
+        </div >
     );
 };

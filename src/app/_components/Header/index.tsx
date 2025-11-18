@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
+import { MenuCheesburgerSolid } from "@lineiconshq/free-icons";
 
 import { shell } from "../../styles";
 import {
@@ -12,21 +13,20 @@ import {
     siteHeaderInner,
     siteHeaderBrand,
     siteHeaderWordmark,
-    siteHeaderToggle,
     siteHeaderNav,
     siteHeaderNavList,
     siteHeaderCta,
     navLink,
     navLinkActive,
-    burger,
-    burgerOpen,
-    srOnly,
+    mobileMenuButton,
 } from "./styles";
+import { Lineicons } from "@lineiconshq/react-lineicons";
 
 import { Button } from "@/components/Button";
 import { LoginDialog } from "./LoginDialog";
 import { RegisterDialog } from "./RegisterDialog";
 import { MobileMenu } from "./MobileMenu";
+import { IconButton } from "@/components/IconButton";
 
 const navItems = [
     { id: "home", label: "Domů", href: "/" },
@@ -62,7 +62,6 @@ export const Header = () => {
         setModalType(null);
     };
 
-    // Tyhle funkce použijeme pro mobilní menu, aby zároveň zavíralo drawer
     const handleMobileLogin = () => {
         setIsOpen(false);
         setModalType("login");
@@ -73,7 +72,6 @@ export const Header = () => {
         setModalType("register");
     };
 
-    console.log("MobileMenu render, isOpen:", isOpen);
     return (
         <header className={siteHeader} data-component="site-header">
             <div className={`${shell} ${siteHeaderInner}`}>
@@ -95,19 +93,20 @@ export const Header = () => {
                     </>
                 </Link>
 
-                <button
-                    type="button"
-                    className={siteHeaderToggle}
-                    aria-expanded={isOpen}
-                    aria-controls="mobile-nav"
+                <IconButton
                     onClick={() => setIsOpen(true)}
-                >
-                    <span className={srOnly}>Otevřít menu</span>
-                    <span
-                        aria-hidden="true"
-                        className={`${burger} ${isOpen ? burgerOpen : ""}`}
-                    />
-                </button>
+                    ariaLabel="Otevřít menu"
+                    className={mobileMenuButton}
+                    icon={
+                        <Lineicons
+                            icon={MenuCheesburgerSolid}
+                            size={28}
+                            strokeWidth={1.7}
+                            aria-hidden="true"
+
+                        />
+                    }
+                />
 
                 <nav className={siteHeaderNav} aria-label="Hlavní navigace">
                     <ul className={siteHeaderNavList}>

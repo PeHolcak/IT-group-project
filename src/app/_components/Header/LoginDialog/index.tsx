@@ -2,6 +2,10 @@
 
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
 import {
     overlay,
     dialog,
@@ -18,6 +22,7 @@ import {
 } from "./styles";
 
 import { FormInput } from "@/components/FormInput";
+import { FormStatus } from "@/components/FormStatus";
 
 type LoginFormValues = {
     email: string;
@@ -30,6 +35,11 @@ type LoginDialogProps = {
 };
 
 export const LoginDialog = ({ onClose }: LoginDialogProps) => {
+    const router = useRouter();
+    const [status, setStatus] = useState<null | { type: "success" | "error"; message: string }>(
+        null,
+    );
+
     const {
         register,
         handleSubmit,
@@ -42,12 +52,38 @@ export const LoginDialog = ({ onClose }: LoginDialogProps) => {
         },
     });
 
-    const onSubmit = (data: LoginFormValues) => {
-        console.log("login data", data);
+    const onSubmit = async (data: LoginFormValues) => {
+        setStatus(null);
+
+        const res = await signIn("credentials", {
+            email: data.email,
+            password: data.password,
+            redirect: false,
+        });
+
+        if (res?.error) {
+            setStatus({
+                type: "error",
+                message: "Neplatný e-mail nebo heslo.",
+            });
+            return;
+        }
+
+        // úspěch – refreshneš UI a zavřeš dialog
+        router.refresh();
+        if (onClose) onClose();
     };
 
     return (
         <div className={overlay}>
+            {status && (
+                <FormStatus
+                    type={status.type}
+                    message={status.message}
+                    onClose={() => setStatus(null)}
+                />
+            )}
+
             <div className={dialog}>
                 <header className={dialogHeader}>
                     <h2 className={title}>Přihlášení</h2>
