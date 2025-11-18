@@ -1,4 +1,4 @@
-import { card } from "../../../styles"
+import { card, titleName } from "../../../styles"
 
 type Props = {
     title: string
@@ -8,7 +8,7 @@ type Props = {
 export default function HowItWorksCard({ title, description }: Props) {
     return (
         <article className={card}>
-            <h3>{title}</h3>
+            <h3 className={titleName}>{title}</h3>
             <p>{description}</p>
         </article>
     )

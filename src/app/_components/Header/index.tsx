@@ -4,12 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
+import Image from "next/image";
+
 import { shell } from "../../styles";
 import {
     siteHeader,
     siteHeaderInner,
     siteHeaderBrand,
-    siteHeaderLogo,
     siteHeaderWordmark,
     siteHeaderToggle,
     siteHeaderNav,
@@ -19,20 +20,13 @@ import {
     navLinkActive,
     burger,
     burgerOpen,
-    mobileDrawer,
-    mobileDrawerOpen,
-    mobileDrawerClose,
-    mobileDrawerCloseIcon,
-    mobileDrawerNav,
-    mobileDrawerNavList,
-    mobileDrawerNavLink,
-    mobileDrawerNavLinkActive,
-    mobileDrawerCta,
     srOnly,
 } from "./styles";
+
 import { Button } from "@/components/Button";
 import { LoginDialog } from "./LoginDialog";
 import { RegisterDialog } from "./RegisterDialog";
+import { MobileMenu } from "./MobileMenu";
 
 const navItems = [
     { id: "home", label: "Domů", href: "/" },
@@ -48,13 +42,11 @@ export const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalType, setModalType] = useState<ModalType>(null);
 
-    const { data: session, status } = useSession();          // 👈 přidáno
-    const isAuthenticated = status === "authenticated";      // 👈 helper
+    const { status } = useSession();
+    const isAuthenticated = status === "authenticated";
 
     const isActive = (href: string) => {
-        if (href === "/") {
-            return pathname === "/";
-        }
+        if (href === "/") return pathname === "/";
         return pathname.startsWith(href);
     };
 
@@ -64,12 +56,24 @@ export const Header = () => {
     const openRegister = () => setModalType("register");
     const closeDialog = () => setModalType(null);
 
-    const handleLogout = async () => {                      // 👈 logout helper
+    const handleLogout = async () => {
         await signOut({ callbackUrl: "/" });
         setIsOpen(false);
         setModalType(null);
     };
 
+    // Tyhle funkce použijeme pro mobilní menu, aby zároveň zavíralo drawer
+    const handleMobileLogin = () => {
+        setIsOpen(false);
+        setModalType("login");
+    };
+
+    const handleMobileRegister = () => {
+        setIsOpen(false);
+        setModalType("register");
+    };
+
+    console.log("MobileMenu render, isOpen:", isOpen);
     return (
         <header className={siteHeader} data-component="site-header">
             <div className={`${shell} ${siteHeaderInner}`}>
@@ -79,10 +83,16 @@ export const Header = () => {
                     aria-label={`BoardZone domů`}
                     onClick={handleCloseMenu}
                 >
-                    <span className={siteHeaderLogo} aria-hidden="true">
-                        🎲
-                    </span>
-                    <span className={siteHeaderWordmark}>BoardZone</span>
+                    <>
+                        <Image
+                            src="/images/logo.svg"
+                            alt="Deskové hry a pivo"
+                            width={80}
+                            height={67}
+                            loading="lazy"
+                        />
+                        <span className={siteHeaderWordmark}>BoardZone</span>
+                    </>
                 </Link>
 
                 <button
@@ -90,7 +100,7 @@ export const Header = () => {
                     className={siteHeaderToggle}
                     aria-expanded={isOpen}
                     aria-controls="mobile-nav"
-                    onClick={() => setIsOpen((prev) => !prev)}
+                    onClick={() => setIsOpen(true)}
                 >
                     <span className={srOnly}>Otevřít menu</span>
                     <span
@@ -116,7 +126,6 @@ export const Header = () => {
                     </ul>
                 </nav>
 
-                {/* DESKTOP CTA */}
                 <div className={siteHeaderCta}>
                     {!isAuthenticated ? (
                         <>
@@ -130,9 +139,7 @@ export const Header = () => {
                     ) : (
                         <>
                             <Link href="/profile">
-                                <Button variant="ghost">
-                                    Profil
-                                </Button>
+                                <Button variant="ghost">Profil</Button>
                             </Link>
                             <Button variant="primary" onClick={handleLogout}>
                                 Odhlásit
@@ -142,81 +149,16 @@ export const Header = () => {
                 </div>
             </div>
 
-            {/* MOBILE DRAWER */}
-            <div
-                id="mobile-nav"
-                aria-hidden={!isOpen}
-                className={`${mobileDrawer} ${isOpen ? mobileDrawerOpen : ""}`}
-            >
-                <button
-                    type="button"
-                    className={mobileDrawerClose}
-                    onClick={handleCloseMenu}
-                >
-                    <span className={srOnly}>Zavřít menu</span>
-                    <span aria-hidden="true" className={mobileDrawerCloseIcon} />
-                </button>
-
-                <nav className={mobileDrawerNav} aria-label="Mobilní navigace">
-                    <ul className={mobileDrawerNavList}>
-                        {navItems.map((item) => (
-                            <li key={item.id}>
-                                <Link
-                                    href={item.href}
-                                    className={`${mobileDrawerNavLink} ${isActive(item.href)
-                                        ? mobileDrawerNavLinkActive
-                                        : ""
-                                        }`}
-                                    aria-current={isActive(item.href) ? "page" : undefined}
-                                    onClick={handleCloseMenu}
-                                >
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
-
-                {/* MOBILE CTA */}
-                <div className={mobileDrawerCta}>
-                    {!isAuthenticated ? (
-                        <>
-                            <Button
-                                variant="primary"
-                                onClick={() => {
-                                    openLogin();
-                                    handleCloseMenu();
-                                }}
-                            >
-                                Přihlásit
-                            </Button>
-                            <Button
-                                variant="ghost"
-                                onClick={() => {
-                                    openRegister();
-                                    handleCloseMenu();
-                                }}
-                            >
-                                Registrovat
-                            </Button>
-                        </>
-                    ) : (
-                        <>
-                            <Link href="/profile" onClick={handleCloseMenu}>
-                                <Button variant="ghost">
-                                    Profil
-                                </Button>
-                            </Link>
-                            <Button
-                                variant="primary"
-                                onClick={handleLogout}
-                            >
-                                Odhlásit
-                            </Button>
-                        </>
-                    )}
-                </div>
-            </div>
+            <MobileMenu
+                isOpen={isOpen}
+                navItems={navItems}
+                isAuthenticated={isAuthenticated}
+                onClose={handleCloseMenu}
+                onLogin={handleMobileLogin}
+                onRegister={handleMobileRegister}
+                onLogout={handleLogout}
+                isActive={isActive}
+            />
 
             {modalType === "login" ? <LoginDialog onClose={closeDialog} /> : null}
             {modalType === "register" ? <RegisterDialog onClose={closeDialog} /> : null}

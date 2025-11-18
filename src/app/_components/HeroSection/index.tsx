@@ -11,6 +11,7 @@ import {
     eyebrow,
 } from "../../styles";
 import { Button } from "@/components/Button";
+import { ButtonLink } from "@/components/ButtonLink";
 
 export default function HeroSection() {
     return (
@@ -27,13 +28,14 @@ export default function HeroSection() {
                     </p>
 
                     <div className={heroActions}>
-                        <Link href="/reservation">
-                            <Button variant="primary">Rezervovat stůl</Button>
-                        </Link>
-                        <Link href="/menu">
-                            <Button variant="ghost">Zobrazit menu</Button>
-                        </Link>
+                        <ButtonLink href="/reservation" variant="primary" fullWidth>
+                            Rezervovat stůl
+                        </ButtonLink>
+                        <ButtonLink href="/menu" variant="ghost" fullWidth>
+                            Zobrazit menu
+                        </ButtonLink>
                     </div>
+
                 </div>
 
                 <div className={heroMedia}>
@@ -45,7 +47,7 @@ export default function HeroSection() {
                         loading="lazy"
                     />
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }

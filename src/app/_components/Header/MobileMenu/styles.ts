@@ -45,7 +45,7 @@ export const siteHeaderToggle = css({
     borderColor: "rgba(229, 231, 235, 0.18)",
     color: "text",
     borderRadius: "sm",
-    p: "1rem",
+    p: "0.4rem",
     boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.05)",
     cursor: "pointer",
     _focusVisible: {
@@ -140,14 +140,13 @@ export const mobileDrawer = css({
     position: "fixed",
     inset: 0,
     bg: "linear-gradient(165deg, rgba(23, 26, 33, 0.98), rgba(12, 14, 18, 0.98))",
-    boxShadow: "0 35px 60px rgba(0, 0, 0, 0.6)",
-    p: "6rem md lg",
+    p: "6rem 2rem",
     display: {
         base: "flex",
         sm: "none",
     },
     flexDirection: "column",
-    gap: "lg",
+    gap: "0.6rem",
     transform: "translateY(-10%)",
     opacity: 0,
     visibility: "hidden",
@@ -156,7 +155,7 @@ export const mobileDrawer = css({
 })
 
 export const mobileDrawerOpen = css({
-    opacity: 1,
+    opacity: "1 !important",
     transform: "translateY(0)",
     visibility: "visible",
 })

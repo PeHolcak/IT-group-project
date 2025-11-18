@@ -47,7 +47,7 @@ export const heroInner = css({
 })
 
 export const heroCopy = css({
-    paddingLeft: "2rem",
+    paddingInline: "2rem",
 })
 
 export const heroTitle = css({
@@ -97,6 +97,12 @@ export const card = css({
     borderRadius: "lg",
     p: "md",
     boxShadow: "soft",
+})
+
+export const titleName = css({
+    fontWeight: 600,
+    fontSize: "1.4rem",
+    mb: "xs"
 })
 
 export const venueInfoGrid = css({
