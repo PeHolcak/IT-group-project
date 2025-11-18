@@ -1,68 +1,52 @@
-"use client";
+"use client"
 
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { Button } from "@/components/Button";
-import {
-    formCard,
-    formHeading,
-    form
-} from "./styles";
+import { useForm } from "react-hook-form"
 
-import { FormInput } from "@/components/FormInput";
-import { FormTextarea } from "@/components/FormInput/FormTextarea";
-import { FormStatus } from "@/components/FormStatus";
-import { submitContact } from "./actions";
+import { Button } from "@/components/Button"
+import { FormInput } from "@/components/FormInput"
+import { FormTextarea } from "@/components/FormInput/FormTextarea"
+
+import { toast } from "sonner"
+import { submitContact } from "./actions"
+import { form, formCard, formHeading } from "./styles"
 
 type ContactFormValues = {
-    name: string;
-    email: string;
-    message: string;
-};
+    name: string
+    email: string
+    message: string
+}
 
 export const ContactForm = () => {
-    const [status, setStatus] = useState<null | { type: "success" | "error"; message: string }>(null);
-
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
-        reset
+        reset,
     } = useForm<ContactFormValues>({
         defaultValues: {
             name: "",
             email: "",
             message: "",
         },
-    });
+    })
 
     const onSubmit = async (data: ContactFormValues) => {
         try {
-            await submitContact(data);
-            reset();
-            setStatus({
-                type: "success",
-                message: "Zpráva byla úspěšně odeslána!",
-            });
+            await submitContact(data)
+            toast.success("Operace proběhla úspěšně", {
+                description: "Přidání kontaktu se zdařilo.",
+            })
+            reset()
         } catch (error) {
-            console.error("submitContact error:", error);
-            setStatus({
-                type: "error",
-                message: "Odeslání se nezdařilo. Zkuste to znovu.",
-            });
+            toast.error("Operace proběhla neúspěšně", {
+                description: "Přidání kontaktu se nezdařilo.",
+            })
+            console.error("submitContact error:", error)
         }
-    };
+    }
 
     return (
         <>
-            {status && (
-                <FormStatus
-                    type={status.type}
-                    message={status.message}
-                    onClose={() => setStatus(null)}
-                />
-            )}
-
             <div className={formCard}>
                 <h2 className={formHeading}>Napište nám</h2>
 
@@ -119,5 +103,5 @@ export const ContactForm = () => {
                 </form>
             </div>
         </>
-    );
-};
+    )
+}

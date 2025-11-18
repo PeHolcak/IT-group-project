@@ -8,6 +8,14 @@ export default defineConfig({
   outdir: "src/styled-system",
 
   theme: {
+    extend: {
+      keyframes: {
+        spin: {
+          to: { transform: "rotate(360deg)" },
+        },
+      },
+    },
+
     tokens: {
       colors: {
         bg: { value: "#0f1115" },
@@ -17,6 +25,11 @@ export default defineConfig({
         text: { value: "#e5e7eb" },
         muted: { value: "#9ca3af" },
         borderSubtle: { value: "rgba(229, 231, 235, 0.08)" },
+      },
+      gradients: {
+        satisfies: {
+          value: "radial-gradient(circle at 15% 20%, rgba(63, 185, 80, 0.25), transparent 55%)",
+        },
       },
       radii: {
         sm: { value: "0.5rem" },
