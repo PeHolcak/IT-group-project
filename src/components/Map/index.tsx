@@ -1,15 +1,14 @@
 import { Button } from "@/components/CTA/Button"
 import Link from "next/link"
 import { mapButtonWrapper, mapCard, mapPlaceholderText } from "./styles"
+import { ButtonLink } from "@/components/CTA"
 
 export const Map = () => {
   return (
     <div className={mapCard}>
       <p className={mapPlaceholderText}>Interaktivní mapa bude doplněna.</p>
       <div className={mapButtonWrapper}>
-        <Link href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
-          <Button variant="primary">Otevřít v Mapách</Button>
-        </Link>
+        <ButtonLink href="https://maps.google.com">Otevřít v Mapách</ButtonLink>
       </div>
     </div>
   )
