@@ -2,6 +2,7 @@ import Link from "next/link"
 import { contactLead, contactList, contactLabel } from "./styles"
 import { OpeningHoursTable } from "@/components/OpeningHoursTable"
 import { Card } from "@/components/Card"
+import { COMPANY_DATA } from "@/config/company"
 
 export const ContactInfo = () => {
   return (
@@ -14,18 +15,18 @@ export const ContactInfo = () => {
       <dl className={contactList}>
         <div>
           <dt className={contactLabel}>Adresa:</dt>
-          <dd>Rohanská 42, Praha 8</dd>
+          <dd>{COMPANY_DATA.address}</dd>
         </div>
         <div>
           <dt className={contactLabel}>Telefon:</dt>
           <dd>
-            <Link href="tel:+420777123456">+420 777 123 456</Link>
+            <Link href="tel:+420777123456">{COMPANY_DATA.tel}</Link>
           </dd>
         </div>
         <div>
           <dt className={contactLabel}>E-mail:</dt>
           <dd>
-            <Link href="mailto:ahoj@boardzone.cz">ahoj@boardzone.cz</Link>
+            <Link href="mailto:ahoj@boardzone.cz">{COMPANY_DATA.email}</Link>
           </dd>
         </div>
       </dl>
