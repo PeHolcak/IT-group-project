@@ -1,7 +1,7 @@
 import { Header2 } from "@/components/SectionTitle"
 
 import { section, grid, gridCols3 } from "./styles"
-import HowItWorksCard from "./HowItWorksCard"
+import { HowItWorksCard } from "./HowItWorksCard"
 
 const steps = [
   {

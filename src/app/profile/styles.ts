@@ -6,7 +6,9 @@ export const profilePage = css({
 })
 
 export const profileCard = css({
-  maxWidth: "48rem",
+  width: "min(100%, 1080px)",
+  mx: "auto",
+
   marginInline: "auto",
   backgroundColor: "rgba(23, 26, 33, 0.95)",
   borderRadius: "lg",
@@ -25,7 +27,7 @@ export const profileHeader = css({
   justifyContent: "space-between",
   gap: "1rem",
   borderBottomWidth: "1px",
-  borderBottomColor: "rgba(148, 163, 184, 0.35)",
+  borderBottomColor: "ghostButton",
   paddingBottom: "1rem",
 })
 
@@ -44,15 +46,12 @@ export const profileMeta = css({
 
 export const roleBadge = css({
   fontSize: "0.85rem",
-  paddingInline: "0.9rem",
-  paddingBlock: "0.35rem",
+  padding: "0.35rem 0.9rem",
   borderRadius: "0.4rem",
-  background: "rgba(63, 185, 80, 0.7)",
-  color: "secondary",
+  background: "accent",
+  color: "surface",
   fontWeight: 600,
   textTransform: "uppercase",
-  letterSpacing: "0.06em",
-  whiteSpace: "nowrap",
 })
 
 export const profileGrid = css({
@@ -60,7 +59,8 @@ export const profileGrid = css({
   gridTemplateColumns: {
     base: "1fr",
     sm: "repeat(2, minmax(0, 1fr))",
-    lg: "repeat(3, minmax(0, 1fr))",
+    md: "repeat(3, minmax(0, 1fr))",
+    lg: "repeat(4, minmax(0, 1fr))",
   },
   gap: "1.25rem 1.5rem",
   mt: "0.5rem",
@@ -75,7 +75,6 @@ export const profileItem = css({
 export const profileLabel = css({
   fontSize: "0.8rem",
   textTransform: "uppercase",
-  letterSpacing: "0.08em",
   color: "muted",
 })
 
@@ -83,5 +82,4 @@ export const profileValue = css({
   fontSize: "0.95rem",
   color: "text",
   fontWeight: 500,
-  wordBreak: "break-word",
 })

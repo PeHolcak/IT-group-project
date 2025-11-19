@@ -10,19 +10,7 @@ import { useRouter } from "next/navigation"
 import { FormInput } from "@/components/FormInput"
 import { type LoginValues, loginSchema } from "@/schemas/userFormSchema"
 
-import {
-  overlay,
-  dialog,
-  dialogHeader,
-  closeButton,
-  title,
-  form,
-  rememberRow,
-  checkbox,
-  checkboxLabel,
-  actionsRow,
-  forgotLink,
-} from "./styles"
+import { form, rememberRow, checkbox, checkboxLabel, actionsRow, forgotLink } from "./styles"
 import { Button } from "@/components/Button"
 import { Dialog } from "@/components/Dialog"
 

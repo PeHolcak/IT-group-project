@@ -4,7 +4,7 @@ export const hoursTable = css({
   mt: "md",
   width: "100%",
   borderCollapse: "collapse",
-  bg: "secondary",
+  bg: "secondary_70",
   borderRadius: "md",
   overflow: "hidden",
   "& th, & td": {

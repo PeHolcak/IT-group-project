@@ -8,8 +8,6 @@ import { IconButton } from "@/components/IconButton"
 
 import {
   mobileDrawer,
-  mobileDrawerNav,
-  mobileDrawerNavList,
   mobileDrawerNavLink,
   mobileDrawerNavLinkActive,
   mobileDrawerCta,
@@ -48,24 +46,18 @@ export const MobileMenu = ({
   }
 
   return (
-    <div id="mobile-nav" aria-hidden={!isOpen} className={mobileDrawer}>
+    <div className={mobileDrawer}>
       <IconButton
         onClick={onClose}
         ariaLabel="Zavřít menu"
         className={mobileDrawerClose}
         icon={
-          <Lineicons
-            icon={XmarkSolid}
-            size={18}
-            strokeWidth={1.7}
-            aria-hidden="true"
-            style={{ marginRight: 8 }}
-          />
+          <Lineicons icon={XmarkSolid} size={18} strokeWidth={1.7} style={{ marginRight: 8 }} />
         }
       />
 
-      <nav className={mobileDrawerNav} aria-label="Mobilní navigace">
-        <ul className={mobileDrawerNavList}>
+      <nav>
+        <ul>
           {navItems.map((item) => (
             <li key={item.id}>
               <Link
@@ -73,7 +65,6 @@ export const MobileMenu = ({
                 className={`${mobileDrawerNavLink} ${
                   isActive(item.href) ? mobileDrawerNavLinkActive : ""
                 }`}
-                aria-current={isActive(item.href) ? "page" : undefined}
                 onClick={onClose}
               >
                 {item.label}

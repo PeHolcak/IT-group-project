@@ -6,32 +6,50 @@
   <component name="ChangeListManager">
     <list default="true" id="e5661b15-a712-48c9-8adc-b68ee99198e8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/panda.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/panda.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/Footer/BrandSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Footer/BrandSection/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Footer/BrandSection/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Footer/BrandSection/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Footer/HoursSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Footer/HoursSection/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Footer/HoursSection/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Footer/HoursSection/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Footer/SocialSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Footer/SocialSection/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Footer/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Footer/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Footer/styles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/Header/LoginDialog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/LoginDialog/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/Header/LoginDialog/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/LoginDialog/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/Header/MobileMenu/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/MobileMenu/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/Header/MobileMenu/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/MobileMenu/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/Header/RegisterDialog/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/RegisterDialog/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/Header/RegisterDialog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/RegisterDialog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/Header/RegisterDialog/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/RegisterDialog/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/Header/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/HeroSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HeroSection/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/HeroSection/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HeroSection/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/HowItWorksSection/HowItWorksCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HowItWorksSection/HowItWorksCard/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/HowItWorksSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HowItWorksSection/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/HowItWorksSection/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HowItWorksSection/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/VenueSection/VenueMapPlaceholder/index.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/_components/VenueSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/VenueSection/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/contact/_components/ContactForm/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/_components/ContactForm/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/VenueSection/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/VenueSection/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/contact/_components/ContactForm/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/_components/ContactForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contact/_components/ContactForm/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/_components/ContactForm/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/contact/_components/ContactInfo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/_components/ContactInfo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contact/_components/ContactInfo/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/_components/ContactInfo/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contact/_components/ContactMap/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contact/_components/ContactMap/styles.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contact/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/contact/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/menu/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/menu/actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/profile/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reservation/_components/Filters/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reservation/_components/Filters/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reservation/_components/Filters/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reservation/_components/Filters/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/reservation/_components/Table/ReservationCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reservation/_components/Table/ReservationCard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reservation/_components/Table/ReservationCard/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reservation/_components/Table/ReservationCard/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/reservation/_components/Table/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reservation/_components/Table/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reservation/_components/Table/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reservation/_components/Table/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/reservation/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/reservation/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AdminOnly/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AdminOnly/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OpeningHoursTable/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OpeningHoursTable/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialog/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialog/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormInput/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormInput/styles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styled-system/tokens/index.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled-system/tokens/index.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styled-system/tokens/tokens.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styled-system/tokens/tokens.d.ts" afterDir="false" />
     </list>
@@ -102,6 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763448754433</updated>
       <workItem from="1763448755706" duration="3118000" />
+      <workItem from="1763534714741" duration="101000" />
     </task>
     <servers />
   </component>

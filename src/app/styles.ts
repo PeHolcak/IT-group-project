@@ -12,8 +12,9 @@ export const layoutBody = css({
 })
 
 export const main = css({
+  mt: "7rem",
+
   flex: "1 1 auto",
-  paddingBottom: "4.5rem",
   md: {
     paddingBottom: 0,
   },
@@ -22,7 +23,6 @@ export const main = css({
 export const shell = css({
   width: "min(100%, 1080px)",
   mx: "auto",
-  px: "md",
 })
 
 export const mapPlaceholder = css({
@@ -48,15 +48,4 @@ export const Text = css({
   textTransform: "uppercase",
   fontWeight: 500,
   color: { base: "gray.100", _light: "gray.700" },
-})
-
-export const spinner = css({
-  width: "48px",
-  height: "48px",
-  borderRadius: "24px",
-  borderWidth: "5px",
-  borderStyle: "solid",
-  borderColor: "rgba(63, 185, 80, 0.25)",
-  borderTopColor: "white",
-  animation: "spin 0.8s linear infinite",
 })

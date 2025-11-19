@@ -10,5 +10,5 @@ export const grid = css({
 })
 
 export const gridCols3 = css({
-  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))",
 })

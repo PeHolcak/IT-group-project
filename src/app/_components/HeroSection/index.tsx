@@ -1,11 +1,11 @@
 import Image from "next/image"
-import { heroInner, heroCopy, heroTitle, heroText, heroActions, heroMedia, eyebrow } from "./styles"
+import { heroInner, heroTitle, heroText, heroActions, heroMedia, eyebrow } from "./styles"
 import { ButtonLink } from "@/components/ButtonLink"
 
 export const HeroSection = () => {
   return (
     <section className={heroInner}>
-      <div className={heroCopy}>
+      <div>
         <p className={eyebrow}>Deskové hry &amp; řemeslné pivo</p>
         <h1 className={heroTitle}>Deskové hry &amp; pivo. Rezervuj stůl online.</h1>
         <p className={heroText}>

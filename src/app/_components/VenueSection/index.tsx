@@ -1,7 +1,7 @@
 import { Header2 } from "@/components/SectionTitle"
 import { venueInfoGrid } from "./styles"
 import { OpeningHoursTable } from "@/components/OpeningHoursTable"
-import VenueMapPlaceholder from "./VenueMapPlaceholder"
+import { Map } from "@/components/Map"
 
 export const VenueSection = () => {
   return (
@@ -16,7 +16,7 @@ export const VenueSection = () => {
         <OpeningHoursTable />
       </div>
 
-      <VenueMapPlaceholder />
+      <Map />
     </section>
   )
 }

@@ -1,9 +1,10 @@
-import { loadingWrapper, spinner } from "./styles"
+import Loader from "@/components/Loader"
+import { loadingWrapper } from "./styles"
 
 const LoadingPage = () => {
   return (
     <div className={loadingWrapper}>
-      <div className={spinner} />
+      <Loader />
     </div>
   )
 }

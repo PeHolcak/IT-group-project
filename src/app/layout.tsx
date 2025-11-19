@@ -1,18 +1,18 @@
 import type { Metadata } from "next"
 import { ReactNode } from "react"
 import { layoutBody, main as mainClass, shell as shellClass } from "./styles"
-import './globals.css'
+import "./globals.css"
 import "../styled-system/styles.css"
 
-import { Noto_Sans } from "next/font/google";
-import { Footer } from "./_components/Footer";
-import { Header } from "./_components/Header";
-import { Providers } from "./_components/Providers";
+import { Noto_Sans } from "next/font/google"
+import { Footer } from "./_components/Footer"
+import { Header } from "./_components/Header"
+import { Providers } from "./_components/Providers"
 
 const notoSans = Noto_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-});
+})
 
 export const metadata: Metadata = {
   title: "BoardZone – Deskové hry & pivo",

@@ -7,7 +7,6 @@ import { useSession, signOut } from "next-auth/react"
 import Image from "next/image"
 import { MenuCheesburgerSolid } from "@lineiconshq/free-icons"
 
-import { shell } from "../../styles"
 import {
   siteHeader,
   siteHeaderInner,
@@ -22,12 +21,11 @@ import {
 } from "./styles"
 import { Lineicons } from "@lineiconshq/react-lineicons"
 
-import { Button } from "@/components/Button"
 import { LoginDialog } from "./LoginDialog"
 import { RegisterDialog } from "./RegisterDialog"
 import { MobileMenu } from "./MobileMenu"
 import { IconButton } from "@/components/IconButton"
-import { ButtonLink } from "@/components/ButtonLink"
+import { NavbarButtons } from "./NavbarButtons"
 
 const navItems = [
   { id: "home", label: "Domů", href: "/" },
@@ -43,40 +41,39 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [modalType, setModalType] = useState<ModalType>(null)
 
-  const { status, data: session } = useSession()
+  const { status } = useSession()
   const isAuthenticated = status === "authenticated"
-  const isAdmin = session?.user?.role === "admin"
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/"
     return pathname.startsWith(href)
   }
 
-  const handleCloseMenu = () => setIsOpen(false)
-
-  const openLogin = () => setModalType("login")
-  const openRegister = () => setModalType("register")
-  const closeDialog = () => setModalType(null)
-
-  const handleLogout = async () => {
-    await signOut({ callbackUrl: "/" })
+  const handleCloseMenu = () => {
     setIsOpen(false)
     setModalType(null)
   }
 
-  const handleMobileLogin = () => {
+  const closeDialog = () => setModalType(null)
+
+  const handleLogout = async () => {
+    await signOut({ callbackUrl: "/" })
+    handleCloseMenu()
+  }
+
+  const handleLogin = () => {
     setIsOpen(false)
     setModalType("login")
   }
 
-  const handleMobileRegister = () => {
+  const handleRegister = () => {
     setIsOpen(false)
     setModalType("register")
   }
 
   return (
     <header className={siteHeader} data-component="site-header">
-      <div className={`${shell} ${siteHeaderInner}`}>
+      <div className={siteHeaderInner}>
         <Link
           href="/"
           className={siteHeaderBrand}
@@ -121,30 +118,11 @@ export const Header = () => {
         </nav>
 
         <div className={siteHeaderCta}>
-          {!isAuthenticated ? (
-            <>
-              <Button variant="primary" onClick={openLogin}>
-                Přihlásit
-              </Button>
-              <Button variant="ghost" onClick={openRegister}>
-                Registrovat
-              </Button>
-            </>
-          ) : (
-            <>
-              {isAdmin && (
-                <ButtonLink href="/admin" variant="ghost">
-                  Admin
-                </ButtonLink>
-              )}
-              <ButtonLink href="/profile" variant="ghost">
-                Profil
-              </ButtonLink>
-              <Button variant="primary" onClick={handleLogout}>
-                Odhlásit
-              </Button>
-            </>
-          )}
+          <NavbarButtons
+            onLogin={handleLogin}
+            onRegister={handleRegister}
+            onLogout={handleLogout}
+          />
         </div>
       </div>
 
@@ -153,8 +131,8 @@ export const Header = () => {
         navItems={navItems}
         isAuthenticated={isAuthenticated}
         onClose={handleCloseMenu}
-        onLogin={handleMobileLogin}
-        onRegister={handleMobileRegister}
+        onLogin={handleLogin}
+        onRegister={handleRegister}
         onLogout={handleLogout}
         isActive={isActive}
       />

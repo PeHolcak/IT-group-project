@@ -1,11 +1,11 @@
 import { card, titleName } from "./styles"
 
-type Props = {
+type HowItWorksCardProps = {
   title: string
   description: string
 }
 
-export default function HowItWorksCard({ title, description }: Props) {
+export const HowItWorksCard = ({ title, description }: HowItWorksCardProps) => {
   return (
     <article className={card}>
       <h3 className={titleName}>{title}</h3>

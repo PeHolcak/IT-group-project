@@ -1,9 +1,5 @@
 import { css } from "@/styled-system/css"
 
-export const heroCopy = css({
-  paddingInline: "2rem",
-})
-
 export const heroTitle = css({
   fontSize: "2xl",
   lineHeight: 1.1,
@@ -12,7 +8,6 @@ export const heroTitle = css({
 
 export const heroText = css({
   color: "muted",
-  maxWidth: "32ch",
 })
 
 export const heroActions = css({
@@ -38,12 +33,10 @@ export const eyebrow = css({
 })
 
 export const heroInner = css({
-  py: "xl",
-  pb: "lg",
   bg: "bg",
-  backgroundImage: "gradients.satisfies",
+
   display: "grid",
-  gap: "lg",
+  gap: "xl",
   md: {
     gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
     alignItems: "center",

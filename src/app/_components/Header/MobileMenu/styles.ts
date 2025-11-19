@@ -1,4 +1,4 @@
-import { css } from "@/styled-system/css";
+import { css } from "@/styled-system/css"
 
 export const mobileDrawer = css({
   position: "fixed",
@@ -7,23 +7,19 @@ export const mobileDrawer = css({
   p: "6rem 2rem",
   display: {
     base: "flex",
-    sm: "none",
+    lg: "none",
   },
   flexDirection: "column",
   gap: "0.6rem",
   transition: "opacity 0.2s ease, transform 0.2s ease",
   zIndex: 40,
-});
+})
 
 export const mobileDrawerClose = css({
   position: "absolute",
   top: "md",
   right: "md",
-});
-
-export const mobileDrawerNav = css({
-  // wrapper <nav>
-});
+})
 
 export const mobileDrawerNavList = css({
   display: "flex",
@@ -32,42 +28,42 @@ export const mobileDrawerNavList = css({
   listStyle: "none",
   m: 0,
   p: 0,
-});
+})
 
 export const mobileDrawerNavLink = css({
   display: "block",
   textDecoration: "none",
   borderRadius: "md",
-  bg: "rgba(255, 255, 255, 0.04)",
-  borderWidth: "1px",
+  bg: "ghostButton",
+  borderWidth: "0.1rem",
   borderStyle: "solid",
-  borderColor: "rgba(229, 231, 235, 0.08)",
+  borderColor: "muted",
   color: "text",
   fontSize: "1.05rem",
   fontWeight: 600,
   letterSpacing: "0.02em",
-  px: "1.15rem",
-  py: "0.95rem",
-  transition:
-    "background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease",
+
+  p: "1.1rem 0.9rem",
+  my: "0.5rem",
+
+  transition: "background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease",
   _hover: {
-    bg: "rgba(63, 185, 80, 0.16)",
-    borderColor: "rgba(63, 185, 80, 0.45)",
-    color: "text",
+    bg: "primary_20",
+    borderColor: "primary",
     transform: "translateY(-1px)",
   },
-});
+})
 
 export const mobileDrawerNavLinkActive = css({
-  bg: "rgba(63, 185, 80, 0.16)",
-  borderColor: "rgba(63, 185, 80, 0.45)",
-});
+  bg: "primary_20",
+  borderColor: "primary",
+})
 
 export const mobileDrawerCta = css({
   display: "grid",
   gap: "sm",
-  pt: "0.5rem",
-  borderTopWidth: "1px",
+  pt: "1rem",
+  borderTopWidth: "0.1rem",
   borderTopStyle: "solid",
-  borderTopColor: "rgba(229, 231, 235, 0.08)",
-});
+  borderTopColor: "borderSubtle",
+})

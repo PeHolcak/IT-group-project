@@ -1,13 +1,14 @@
 import { ReservationCard } from "./ReservationCard"
 import { tablesGrid } from "./styles"
 
-type Table = {
+type TableType = {
   id: string
   label: string
   capacity: number
 }
 
-const TABLES: Table[] = [
+const TABLES: TableType[] = [
+  { id: "S-11", label: "Stůl S-11", capacity: 1 },
   { id: "S-01", label: "Stůl S-01", capacity: 2 },
   { id: "S-02", label: "Stůl S-02", capacity: 2 },
   { id: "S-03", label: "Stůl S-03", capacity: 2 },

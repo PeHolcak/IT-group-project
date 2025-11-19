@@ -1,11 +1,9 @@
 /* eslint-disable */
-export type Token = `colors.${ColorToken}` | `gradients.${GradientToken}` | `radii.${RadiusToken}` | `shadows.${ShadowToken}` | `fonts.${FontToken}` | `fontSizes.${FontSizeToken}` | `spacing.${SpacingToken}` | `breakpoints.${BreakpointToken}` | `sizes.${SizeToken}`
+export type Token = `colors.${ColorToken}` | `radii.${RadiusToken}` | `shadows.${ShadowToken}` | `fonts.${FontToken}` | `fontSizes.${FontSizeToken}` | `spacing.${SpacingToken}` | `breakpoints.${BreakpointToken}` | `sizes.${SizeToken}`
 
-export type ColorPalette = "bg" | "surface" | "primary" | "secondary" | "accent" | "text" | "muted" | "borderSubtle" | "darkText" | "ghostButton" | "white"
+export type ColorPalette = "bg" | "surface" | "primary" | "primary_20" | "secondary" | "secondary_70" | "secondary_dark" | "accent" | "text" | "muted" | "borderSubtle" | "dark" | "darkText" | "ghostButton" | "white" | "error" | "inputBorder"
 
-export type ColorToken = "bg" | "surface" | "primary" | "secondary" | "accent" | "text" | "muted" | "borderSubtle" | "darkText" | "ghostButton" | "white" | "colorPalette"
-
-export type GradientToken = "satisfies"
+export type ColorToken = "bg" | "surface" | "primary" | "primary_20" | "secondary" | "secondary_70" | "secondary_dark" | "accent" | "text" | "muted" | "borderSubtle" | "dark" | "darkText" | "ghostButton" | "white" | "error" | "inputBorder" | "colorPalette"
 
 export type RadiusToken = "sm" | "md" | "lg" | "pill"
 
@@ -23,7 +21,6 @@ export type SizeToken = "breakpoint-sm" | "breakpoint-md" | "breakpoint-lg" | "b
 
 export type Tokens = {
 		colors: ColorToken
-		gradients: GradientToken
 		radii: RadiusToken
 		shadows: ShadowToken
 		fonts: FontToken
