@@ -1,9 +1,9 @@
 import Link from "next/link"
-import { Button } from "@/components/Button"
+import { Button } from "@/components/CTA/Button"
 
 import { XmarkSolid } from "@lineiconshq/free-icons"
 import { Lineicons } from "@lineiconshq/react-lineicons"
-import { ButtonLink } from "@/components/ButtonLink"
+import { ButtonLink } from "@/components/CTA/ButtonLink"
 import { IconButton } from "@/components/IconButton"
 
 import {

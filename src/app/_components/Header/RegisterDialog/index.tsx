@@ -12,15 +12,8 @@ import { type RegistrationValues, registrationSchema } from "@/schemas/userFormS
 import { getErrorMessage } from "@/utils/errorUtils"
 
 import { submitRegistration } from "./actions"
-import {
-  form,
-  errorText,
-  rememberRow,
-  checkbox,
-  checkboxLabel,
-  actionsRow,
-  submitButton,
-} from "./styles"
+import { form, errorText, rememberRow, checkbox, checkboxLabel, actionsRow } from "./styles"
+import { Button } from "@/components/CTA"
 
 type RegisterDialogProps = { onClose: () => void }
 
@@ -121,9 +114,9 @@ export const RegisterDialog = ({ onClose }: RegisterDialogProps) => {
         {errors.consent && <p className={errorText}>{errors.consent.message}</p>}
 
         <div className={actionsRow}>
-          <button type="submit" className={submitButton} disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Registruji..." : "Registrovat"}
-          </button>
+          </Button>
         </div>
       </form>
     </Dialog>

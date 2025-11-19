@@ -3,10 +3,10 @@
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
-import { Button } from "@/components/Button"
+import { Button } from "@/components/CTA/Button"
 import { FormInput } from "@/components/FormInput"
 import { FormTextarea } from "@/components/FormInput/FormTextarea"
-import { Card } from "@/app/contact/_components/Card"
+import { Card } from "@/components/Card"
 
 import { submitContact } from "./actions"
 import { form } from "./styles"

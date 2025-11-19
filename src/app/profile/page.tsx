@@ -1,6 +1,8 @@
 import { redirect } from "next/navigation"
 import { getServerSession } from "next-auth"
 
+import type { Metadata } from "next"
+
 import { db } from "@/db/client"
 import { users, contactMessages } from "@/db/schema"
 
@@ -18,6 +20,11 @@ import {
   profileValue,
   roleBadge,
 } from "./styles"
+
+export const metadata: Metadata = {
+  title: "Můj profil | BoardZone",
+  description: "Spravujte svůj profil, rezervace a nastavení účtu na BoardZone.",
+}
 
 export type User = typeof users.$inferSelect
 export type ContactMessage = typeof contactMessages.$inferSelect

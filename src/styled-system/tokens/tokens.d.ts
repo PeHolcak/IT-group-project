@@ -1,9 +1,9 @@
 /* eslint-disable */
 export type Token = `colors.${ColorToken}` | `radii.${RadiusToken}` | `shadows.${ShadowToken}` | `fonts.${FontToken}` | `fontSizes.${FontSizeToken}` | `spacing.${SpacingToken}` | `breakpoints.${BreakpointToken}` | `sizes.${SizeToken}`
 
-export type ColorPalette = "bg" | "surface" | "primary" | "primary_20" | "secondary" | "secondary_70" | "secondary_dark" | "accent" | "text" | "muted" | "borderSubtle" | "dark" | "darkText" | "ghostButton" | "white" | "error" | "inputBorder"
+export type ColorPalette = "bg" | "surface" | "primary" | "primary_20" | "secondary" | "secondary_70" | "secondary_dark" | "accent" | "text" | "muted" | "borderSubtle" | "dark" | "darkText" | "ghostButton" | "white" | "error" | "inputBorder" | "black"
 
-export type ColorToken = "bg" | "surface" | "primary" | "primary_20" | "secondary" | "secondary_70" | "secondary_dark" | "accent" | "text" | "muted" | "borderSubtle" | "dark" | "darkText" | "ghostButton" | "white" | "error" | "inputBorder" | "colorPalette"
+export type ColorToken = "bg" | "surface" | "primary" | "primary_20" | "secondary" | "secondary_70" | "secondary_dark" | "accent" | "text" | "muted" | "borderSubtle" | "dark" | "darkText" | "ghostButton" | "white" | "error" | "inputBorder" | "black" | "colorPalette"
 
 export type RadiusToken = "sm" | "md" | "lg" | "pill"
 

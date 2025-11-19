@@ -9,10 +9,10 @@ import { useRouter } from "next/navigation"
 
 import { FormInput } from "@/components/FormInput"
 import { type LoginValues, loginSchema } from "@/schemas/userFormSchema"
+import { Button } from "@/components/CTA/Button"
+import { Dialog } from "@/components/Dialog"
 
 import { form, rememberRow, checkbox, checkboxLabel, actionsRow, forgotLink } from "./styles"
-import { Button } from "@/components/Button"
-import { Dialog } from "@/components/Dialog"
 
 type LoginDialogProps = {
   onClose?: () => void

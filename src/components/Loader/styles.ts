@@ -6,7 +6,7 @@ export const spinner = css({
   borderRadius: "24px",
   borderWidth: "5px",
   borderStyle: "solid",
-  borderColor: "rgba(63, 185, 80, 0.25)",
+  borderColor: "primary_20",
   borderTopColor: "white",
   animation: "spin 0.8s linear infinite",
 })

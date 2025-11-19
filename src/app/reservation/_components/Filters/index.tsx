@@ -5,7 +5,6 @@ import {
   filterInputWrapper,
   filterInput,
   filterSelect,
-  filterIcon,
 } from "./styles"
 
 export const Filters = () => {

@@ -1,11 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import type { Category, CategoryDef, MenuItem } from "../../actions"
-import { Header } from "@/components/Header"
+import type { Category, CategoryDef, MenuItem } from "@/app/menu/actions"
+import { Header } from "@/components/MenuHeader"
 import { CategoryPills } from "./CategoryPills"
 import { MenuItemsList } from "./MenuItemsList"
-import { Pagination } from "./Pagination"
+import { Pagination } from "@/components/Pagination"
 
 const ITEMS_PER_PAGE = 4
 

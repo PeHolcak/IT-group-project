@@ -19,7 +19,7 @@ export const dialog = css({
 
   borderRadius: "1.25rem",
 
-  boxShadow: "0 2rem 6rem rgba(0,0,0,0.6)",
+  boxShadow: "0 2rem 6rem var(--colors-black)",
 
   p: "2rem",
   position: "relative",

@@ -35,6 +35,7 @@ export default defineConfig({
         white: { value: "#fff" },
         error: { value: "#f97373" },
         inputBorder: { value: "#374151" },
+        black: { value: "rgb(0,0,0)" },
       },
       radii: {
         sm: { value: "0.5rem" },

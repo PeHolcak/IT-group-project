@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { heroInner, heroTitle, heroText, heroActions, heroMedia, eyebrow } from "./styles"
-import { ButtonLink } from "@/components/ButtonLink"
+import { ButtonLink } from "@/components/CTA/ButtonLink"
 
 export const HeroSection = () => {
   return (

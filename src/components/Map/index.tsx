@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button"
+import { Button } from "@/components/CTA/Button"
 import Link from "next/link"
 import { mapButtonWrapper, mapCard, mapPlaceholderText } from "./styles"
 

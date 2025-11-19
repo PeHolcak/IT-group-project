@@ -2,10 +2,10 @@
 
 import Link, { LinkProps } from "next/link"
 import { ReactNode } from "react"
-import { Button } from "@/components/Button"
 import { cx } from "@/styled-system/css"
 
-import { fullWidthClass } from "./styles"
+import { btnFullWidth, btnPrimary, btnGhost, btn } from "@/components/CTA/styles"
+import { link } from "./styles"
 
 type ButtonLinkProps = LinkProps & {
   children: ReactNode
@@ -24,16 +24,16 @@ export const ButtonLink = ({
   className,
   ...props
 }: ButtonLinkProps) => {
+  const variantClass = variant === "ghost" ? btnGhost : btnPrimary
+
   return (
     <Link
       href={href}
       onClick={onClick}
-      className={cx(fullWidth && fullWidthClass, className)}
+      className={cx(btn, variantClass, fullWidth && btnFullWidth, link, className)}
       {...props}
     >
-      <Button variant={variant} fullWidth={fullWidth}>
-        {children}
-      </Button>
+      {children}
     </Link>
   )
 }

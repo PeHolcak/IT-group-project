@@ -1,9 +1,10 @@
 "use client"
 
-import { Button } from "@/components/Button"
+import { Button } from "@/components/CTA/Button"
 import { tableCard, tableHeader, tableName, tableCapacity, tableDescription } from "./styles"
 import { useSession } from "next-auth/react"
 import Loader from "@/components/Loader"
+import { Card } from "@/components/Card"
 
 type ReservationCardProps = {
   id: string
@@ -31,7 +32,7 @@ const getDescription = (capacity: number) => {
 export const ReservationCard = ({ label, capacity, id }: ReservationCardProps) => {
   const { status } = useSession()
   return (
-    <article className={tableCard}>
+    <Card>
       <header className={tableHeader}>
         <h3 className={tableName}>{label}</h3>
         <p className={tableCapacity}>
@@ -46,6 +47,6 @@ export const ReservationCard = ({ label, capacity, id }: ReservationCardProps) =
           Rezervovat
         </Button>
       )}
-    </article>
+    </Card>
   )
 }

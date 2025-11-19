@@ -17,6 +17,11 @@ const notoSans = Noto_Sans({
 export const metadata: Metadata = {
   title: "BoardZone – Deskové hry & pivo",
   description: "Rezervujte si stůl v herním baru s deskovkami a řemeslným pivem.",
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

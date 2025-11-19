@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { contactLead, contactList, contactLabel } from "./styles"
 import { OpeningHoursTable } from "@/components/OpeningHoursTable"
-import { Card } from "@/app/contact/_components/Card"
+import { Card } from "@/components/Card"
 
 export const ContactInfo = () => {
   return (

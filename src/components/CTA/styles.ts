@@ -14,7 +14,7 @@ export const btn = css({
 
 export const btnPrimary = css({
   bg: "primary",
-  color: "darkText",
+  color: "darkText !important",
   _hover: {
     bg: "text",
     color: "surface",

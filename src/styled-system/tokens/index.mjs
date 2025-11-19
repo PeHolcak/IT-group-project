@@ -67,6 +67,10 @@ const tokens = {
     "value": "#374151",
     "variable": "var(--colors-input-border)"
   },
+  "colors.black": {
+    "value": "rgb(0,0,0)",
+    "variable": "var(--colors-black)"
+  },
   "radii.sm": {
     "value": "0.5rem",
     "variable": "var(--radii-sm)"
